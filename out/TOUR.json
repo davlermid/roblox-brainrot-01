@@ -1,0 +1,43 @@
+{
+  "tour": 1,
+  "steps": [
+    {
+      "screenshot": "1-thumbnail.png",
+      "keys": ["W", "A", "S", "D"],
+      "wait": 2000
+    },
+    {
+      "screenshot": "2-start.png",
+      "keys": ["E"],
+      "wait": 1000,
+      "call": {
+        "module": "ServerScriptService.Server.WorldBuilder",
+        "fn": "buildWorld",
+        "arg": "",
+        "on": "Server"
+      }
+    },
+    {
+      "screenshot": "3-play.png",
+      "keys": ["E", "Space"],
+      "wait": 1500,
+      "call": {
+        "module": "ServerScriptService.Server.Spawner",
+        "fn": "spawnSnackrotOnConveyor",
+        "arg": "",
+        "on": "Server"
+      }
+    },
+    {
+      "screenshot": "4-tension.png",
+      "keys": ["Mouse1", "Mouse1", "Mouse1"],
+      "wait": 1000,
+      "call": {
+        "module": "ServerScriptService.Server.StealAI",
+        "fn": "createThief",
+        "arg": "player",
+        "on": "Server"
+      }
+    }
+  ]
+}
